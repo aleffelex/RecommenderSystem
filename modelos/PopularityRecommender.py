@@ -13,9 +13,7 @@ class PopularityRecommender(object):
     def recomenda_itens(self, user_id, items_to_ignore=[], topn=10, verbose=False):
         # Recomemda os itens mais populares que os usuários não viram ainda
         popularidade_df = self.ratings.groupby('ISBN')['Book-Rating'].mean().sort_values(ascending=False).reset_index()
-        recommendations_df = popularidade_df[~self.popularidade_df['ISBN'].isin(items_to_ignore)] \
-                               .sort_values('Book-Rating', ascending = False) \
-                               .head(topn)
+        recommendations_df = popularidade_df[~popularidade_df['ISBN'].isin(items_to_ignore)].sort_values('Book-Rating', ascending = False).head(topn)
 
         if verbose:
             if self.itens_df is None:
