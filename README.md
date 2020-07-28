@@ -1,3 +1,3 @@
 # RecommenderSystem
 
-Aqui implementados alguns modelos de recomendação baseados na popularidade, e filtros colaborativos.
+Modelos de recomendação baseados na popularidade, e filtros colaborativos.
